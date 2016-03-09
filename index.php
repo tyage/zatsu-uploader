@@ -18,13 +18,34 @@ if (!empty($_FILES["file"])) {
 <html lang="ja">
 <head>
 	<meta charset="UTF-8">
-	<title>こんにちはこんにちは！</title>
+	<title>ファイルアップローダー</title>
+	<link rel="stylesheet" href="./pure-min.css">
 </head>
 <body>
-	<form action="./" method="post" enctype="multipart/form-data">
-		<input name="file[]" type="file" multiple="multiple">
-		<input type="submit" value="アップロード">
-	</form>	
+<div class="pure-g">
+	<div class="pure-u-1-4"></div>
+	<div class="pure-u-1-2">
+		<h1>ファイルアップローダー</h1>
+		
+		<nav>
+			<a href="./upload">アップロードファイル一覧</a>
+		</nav>
+	
+		<form action="./" method="post" enctype="multipart/form-data" class="pure-form pure-form-aligned">
+			<fieldset>
+				<legend>ファイルをアップロードする</legend>
+				<div class="pure-control-group">
+					<label for="files">アップロードファイル</label>
+					<input id="files" name="file[]" type="file" multiple="multiple">
+				</div>
+				<div class="pure-controls">
+					<button type="submit" class="pure-button pure-button-primary">アップロード</button>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	<div class="pure-1-4"></div>
+</div>
 </body>
 </html>
 
