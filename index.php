@@ -4,7 +4,7 @@ if (!empty($_FILES["file"])) {
 	mkdir($dir, 0755);
 	$files = $_FILES["file"];
 	foreach ($files["error"] as $key => $value) {
-		if ($value == UPLOAD_ERR_OK) {
+		if ($value === UPLOAD_ERR_OK) {
 			move_uploaded_file($files["tmp_name"][$key], $dir.basename($files["name"][$key]));
 		}
 	}
